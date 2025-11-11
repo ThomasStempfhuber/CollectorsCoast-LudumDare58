@@ -1,0 +1,136 @@
+[gd_scene load_steps=14 format=3 uid="uid://dbbmjyneled2m"]
+
+[ext_resource type="Script" uid="uid://bmxk4vgmob8eq" path="res://scenes/buildings/pedestal.gd" id="1_gpbbt"]
+[ext_resource type="Texture2D" uid="uid://c07217j216ntx" path="res://assets/art/atlas/Sprites.png" id="2_jw03e"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jw03e"]
+atlas = ExtResource("2_jw03e")
+region = Rect2(640, 112, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mx514"]
+atlas = ExtResource("2_jw03e")
+region = Rect2(608, 112, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gpbbt"]
+atlas = ExtResource("2_jw03e")
+region = Rect2(528, 432, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a7cdc"]
+atlas = ExtResource("2_jw03e")
+region = Rect2(560, 432, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1qf4x"]
+atlas = ExtResource("2_jw03e")
+region = Rect2(592, 432, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2wplv"]
+atlas = ExtResource("2_jw03e")
+region = Rect2(624, 432, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_juqsl"]
+atlas = ExtResource("2_jw03e")
+region = Rect2(656, 432, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lcyvm"]
+atlas = ExtResource("2_jw03e")
+region = Rect2(688, 432, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_83rbk"]
+atlas = ExtResource("2_jw03e")
+region = Rect2(720, 432, 32, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_a7cdc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jw03e")
+}],
+"loop": true,
+"name": &"built",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mx514")
+}],
+"loop": true,
+"name": &"lot",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gpbbt")
+}],
+"loop": true,
+"name": &"treasure1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a7cdc")
+}],
+"loop": true,
+"name": &"treasure2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1qf4x")
+}],
+"loop": true,
+"name": &"treasure3",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2wplv")
+}],
+"loop": true,
+"name": &"treasure4",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_juqsl")
+}],
+"loop": true,
+"name": &"treasure5",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lcyvm")
+}],
+"loop": true,
+"name": &"treasure6",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_83rbk")
+}],
+"loop": true,
+"name": &"treasure7",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w8jy3"]
+size = Vector2(17, 16)
+
+[node name="Pedestal" type="StaticBody2D"]
+y_sort_enabled = true
+script = ExtResource("1_gpbbt")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_a7cdc")
+animation = &"treasure5"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, 4)
+shape = SubResource("RectangleShape2D_w8jy3")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-0.5, 4)
+shape = SubResource("RectangleShape2D_w8jy3")

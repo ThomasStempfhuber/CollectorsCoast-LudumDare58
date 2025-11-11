@@ -1,0 +1,85 @@
+[gd_scene load_steps=13 format=3 uid="uid://bhq4i5ksb8qes"]
+
+[ext_resource type="Texture2D" uid="uid://c07217j216ntx" path="res://assets/art/atlas/Sprites.png" id="1_faa1k"]
+[ext_resource type="Script" uid="uid://rmq60h8u2ek7" path="res://scenes/buildings/woodcutter.gd" id="1_yg75y"]
+[ext_resource type="Texture2D" uid="uid://ehbqgvofqqqr" path="res://assets/art/atlas/UI.png" id="3_w8jy3"]
+[ext_resource type="FontFile" uid="uid://b475o4l7b5n10" path="res://assets/fonts/Pixellari.ttf" id="4_rubx5"]
+[ext_resource type="Script" uid="uid://cbs343k5fqkh" path="res://scenes/buildings/res_label.gd" id="5_xd1yv"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yg75y"]
+atlas = ExtResource("1_faa1k")
+region = Rect2(224, 208, 80, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rubx5"]
+atlas = ExtResource("3_w8jy3")
+region = Rect2(240, 0, 80, 16)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xd1yv"]
+texture = SubResource("AtlasTexture_rubx5")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w8jy3"]
+atlas = ExtResource("3_w8jy3")
+region = Rect2(320, 0, 80, 16)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fb2vg"]
+texture = SubResource("AtlasTexture_w8jy3")
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+region_rect = Rect2(0, 0, 80, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w8jy3"]
+size = Vector2(78, 60)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_xd1yv"]
+radius = 150.01334
+
+[node name="Woodcutter" type="StaticBody2D"]
+script = ExtResource("1_yg75y")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("AtlasTexture_yg75y")
+
+[node name="ProdBar" type="ProgressBar" parent="."]
+z_index = 2
+offset_left = -40.0
+offset_top = -45.0
+offset_right = 40.0
+offset_bottom = -29.0
+theme_override_styles/background = SubResource("StyleBoxTexture_xd1yv")
+theme_override_styles/fill = SubResource("StyleBoxTexture_fb2vg")
+show_percentage = false
+
+[node name="ResLabel" type="RichTextLabel" parent="."]
+z_index = 2
+offset_left = -25.0
+offset_top = -60.0
+offset_right = 25.0
+offset_bottom = -30.0
+theme_override_fonts/normal_font = ExtResource("4_rubx5")
+bbcode_enabled = true
+text = "[img]res://assets/art/icons/IconWood.png[/img] +1"
+horizontal_alignment = 1
+script = ExtResource("5_xd1yv")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_w8jy3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_w8jy3")
+
+[node name="FarmArea" type="Area2D" parent="."]
+y_sort_enabled = true
+collision_layer = 10
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FarmArea"]
+shape = SubResource("CircleShape2D_xd1yv")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]
+[connection signal="area_entered" from="FarmArea" to="." method="_on_farm_area_area_entered"]
+[connection signal="area_exited" from="FarmArea" to="." method="_on_farm_area_area_exited"]

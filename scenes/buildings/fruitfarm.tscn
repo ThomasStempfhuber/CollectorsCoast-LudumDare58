@@ -1,0 +1,85 @@
+[gd_scene load_steps=13 format=3 uid="uid://bars08oe5hmrd"]
+
+[ext_resource type="Script" uid="uid://bdt4wrwlmx8ql" path="res://scenes/buildings/fruitfarm.gd" id="1_qjwcw"]
+[ext_resource type="Texture2D" uid="uid://c07217j216ntx" path="res://assets/art/atlas/Sprites.png" id="2_jm8vy"]
+[ext_resource type="Texture2D" uid="uid://ehbqgvofqqqr" path="res://assets/art/atlas/UI.png" id="3_0jlh3"]
+[ext_resource type="FontFile" uid="uid://b475o4l7b5n10" path="res://assets/fonts/Pixellari.ttf" id="4_wlu6d"]
+[ext_resource type="Script" uid="uid://cbs343k5fqkh" path="res://scenes/buildings/res_label.gd" id="5_ed2np"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qjwcw"]
+atlas = ExtResource("2_jm8vy")
+region = Rect2(128, 192, 80, 80)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w8jy3"]
+size = Vector2(79, 45)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rubx5"]
+atlas = ExtResource("3_0jlh3")
+region = Rect2(240, 0, 80, 16)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xd1yv"]
+texture = SubResource("AtlasTexture_rubx5")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w8jy3"]
+atlas = ExtResource("3_0jlh3")
+region = Rect2(320, 0, 80, 16)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fb2vg"]
+texture = SubResource("AtlasTexture_w8jy3")
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+region_rect = Rect2(0, 0, 80, 16)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qjwcw"]
+radius = 167.01198
+
+[node name="Fruitfarm" type="StaticBody2D"]
+script = ExtResource("1_qjwcw")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("AtlasTexture_qjwcw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, 17)
+shape = SubResource("RectangleShape2D_w8jy3")
+
+[node name="ProdBar" type="ProgressBar" parent="."]
+z_index = 2
+offset_left = -40.0
+offset_top = -40.0
+offset_right = 40.0
+offset_bottom = -24.0
+theme_override_styles/background = SubResource("StyleBoxTexture_xd1yv")
+theme_override_styles/fill = SubResource("StyleBoxTexture_fb2vg")
+show_percentage = false
+
+[node name="ResLabel" type="RichTextLabel" parent="."]
+z_index = 2
+offset_left = -25.0
+offset_top = -56.0
+offset_right = 25.0
+offset_bottom = -26.0
+theme_override_fonts/normal_font = ExtResource("4_wlu6d")
+bbcode_enabled = true
+text = "[img]res://assets/art/icons/IconFruit.png[/img] +1"
+horizontal_alignment = 1
+script = ExtResource("5_ed2np")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-0.5, 17)
+shape = SubResource("RectangleShape2D_w8jy3")
+
+[node name="FarmArea" type="Area2D" parent="."]
+y_sort_enabled = true
+collision_layer = 96
+collision_mask = 32
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FarmArea"]
+shape = SubResource("CircleShape2D_qjwcw")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]
+[connection signal="area_entered" from="FarmArea" to="." method="_on_farm_area_area_entered"]
+[connection signal="area_exited" from="FarmArea" to="." method="_on_farm_area_area_exited"]

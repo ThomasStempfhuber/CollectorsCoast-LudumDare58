@@ -1,0 +1,1069 @@
+[gd_scene load_steps=85 format=3 uid="uid://c8sxyd5jcn3x5"]
+
+[ext_resource type="Script" uid="uid://bv8q7i8suedov" path="res://scenes/UI/ui.gd" id="1_gdt2y"]
+[ext_resource type="Texture2D" uid="uid://ehbqgvofqqqr" path="res://assets/art/atlas/UI.png" id="2_gdt2y"]
+[ext_resource type="FontFile" uid="uid://b475o4l7b5n10" path="res://assets/fonts/Pixellari.ttf" id="2_yev5y"]
+[ext_resource type="Script" uid="uid://86yabxujcd3g" path="res://scenes/UI/tooltip_res.gd" id="3_l8uv8"]
+[ext_resource type="Script" uid="uid://dlqv018t6f6tt" path="res://scenes/UI/wood_count.gd" id="4_wm3ai"]
+[ext_resource type="Script" uid="uid://niyyvd7cog23" path="res://scenes/UI/planks_count.gd" id="5_vb61p"]
+[ext_resource type="Script" uid="uid://cnm3xddxsok5e" path="res://scenes/UI/stone_count.gd" id="6_owlbh"]
+[ext_resource type="Script" uid="uid://cvjeed3rpd1ep" path="res://scenes/UI/StorageLabel.gd" id="6_umf6b"]
+[ext_resource type="Script" uid="uid://cojux3mlntfu3" path="res://scenes/UI/food_count.gd" id="7_c5elv"]
+[ext_resource type="Script" uid="uid://cosji1ox3i3sb" path="res://scenes/UI/flax_count.gd" id="8_cketn"]
+[ext_resource type="Script" uid="uid://o6lq7ianx3v5" path="res://scenes/UI/sails_count.gd" id="9_64obo"]
+[ext_resource type="FontFile" uid="uid://wwp2p76ukh1d" path="res://assets/fonts/RobotoCondensed-Regular.ttf" id="10_c5elv"]
+[ext_resource type="Script" uid="uid://b18it4bsquww7" path="res://scenes/UI/tooltip_wc.gd" id="10_cketn"]
+[ext_resource type="Script" uid="uid://cd7q6w82x71ik" path="res://scenes/UI/tooltip_exp_success.gd" id="10_krw1k"]
+[ext_resource type="FontFile" uid="uid://vaoop3ilqphl" path="res://assets/fonts/RobotoCondensed-Bold.ttf" id="11_cketn"]
+[ext_resource type="Script" uid="uid://bxwgvc316nrp6" path="res://scenes/UI/tooltip_exp_no_success.gd" id="12_l8uv8"]
+[ext_resource type="Script" uid="uid://bnpcfs4a185mw" path="res://scenes/UI/tooltip_sm.gd" id="13_64obo"]
+[ext_resource type="Script" uid="uid://b1y1munnu660u" path="res://scenes/UI/tooltip_sc.gd" id="14_4nac7"]
+[ext_resource type="Script" uid="uid://cscptfuev0628" path="res://scenes/UI/tooltip_sh.gd" id="14_7a1qy"]
+[ext_resource type="Script" uid="uid://bsp3s1yv8i8f3" path="res://scenes/UI/tooltip_frf.gd" id="15_teulp"]
+[ext_resource type="Script" uid="uid://cf4d8xeq0aekc" path="res://scenes/UI/tooltip_ff.gd" id="16_krw1k"]
+[ext_resource type="Script" uid="uid://diq42ch7dcvd0" path="res://scenes/UI/tooltip_sma.gd" id="17_l8uv8"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vb61p"]
+bg_color = Color(0, 0, 0, 0.7058824)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+expand_margin_left = 6.0
+expand_margin_top = 3.0
+expand_margin_right = 6.0
+expand_margin_bottom = 3.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wm3ai"]
+atlas = ExtResource("2_gdt2y")
+region = Rect2(192, 144, 384, 48)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wm3ai"]
+texture = SubResource("AtlasTexture_wm3ai")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8dubc"]
+atlas = ExtResource("2_gdt2y")
+region = Rect2(96, 144, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p7vwb"]
+atlas = ExtResource("2_gdt2y")
+region = Rect2(128, 144, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ktti3"]
+atlas = ExtResource("2_gdt2y")
+region = Rect2(0, 144, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cgfq5"]
+atlas = ExtResource("2_gdt2y")
+region = Rect2(160, 144, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7dvkv"]
+atlas = ExtResource("2_gdt2y")
+region = Rect2(32, 144, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vdcm2"]
+atlas = ExtResource("2_gdt2y")
+region = Rect2(64, 144, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6tc23"]
+atlas = ExtResource("2_gdt2y")
+region = Rect2(192, 144, 384, 48)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_q0fjp"]
+content_margin_top = 9.0
+texture = SubResource("AtlasTexture_6tc23")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_yev5y"]
+texture = ExtResource("2_gdt2y")
+region_rect = Rect2(512, 0, 256, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vsj0x"]
+atlas = ExtResource("2_gdt2y")
+region = Rect2(288, 48, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qsv74"]
+atlas = ExtResource("2_gdt2y")
+region = Rect2(384, 48, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h1mc3"]
+atlas = ExtResource("2_gdt2y")
+region = Rect2(336, 48, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q0fjp"]
+atlas = ExtResource("2_gdt2y")
+region = Rect2(0, 240, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cof4p"]
+atlas = ExtResource("2_gdt2y")
+region = Rect2(288, 96, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f7tlh"]
+atlas = ExtResource("2_gdt2y")
+region = Rect2(384, 96, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8k7j3"]
+atlas = ExtResource("2_gdt2y")
+region = Rect2(336, 96, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yyr6m"]
+atlas = ExtResource("2_gdt2y")
+region = Rect2(48, 240, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jkdwc"]
+atlas = ExtResource("2_gdt2y")
+region = Rect2(144, 48, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rlppe"]
+atlas = ExtResource("2_gdt2y")
+region = Rect2(240, 48, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ycmcx"]
+atlas = ExtResource("2_gdt2y")
+region = Rect2(192, 48, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tqkrj"]
+atlas = ExtResource("2_gdt2y")
+region = Rect2(96, 240, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yev5y"]
+atlas = ExtResource("2_gdt2y")
+region = Rect2(0, 96, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gdt2y"]
+atlas = ExtResource("2_gdt2y")
+region = Rect2(96, 96, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6rmj2"]
+atlas = ExtResource("2_gdt2y")
+region = Rect2(48, 96, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uisvg"]
+atlas = ExtResource("2_gdt2y")
+region = Rect2(144, 240, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kupmu"]
+atlas = ExtResource("2_gdt2y")
+region = Rect2(432, 48, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_catpy"]
+atlas = ExtResource("2_gdt2y")
+region = Rect2(528, 48, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_41akx"]
+atlas = ExtResource("2_gdt2y")
+region = Rect2(480, 48, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_331jc"]
+atlas = ExtResource("2_gdt2y")
+region = Rect2(192, 240, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sesyt"]
+atlas = ExtResource("2_gdt2y")
+region = Rect2(144, 96, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gglip"]
+atlas = ExtResource("2_gdt2y")
+region = Rect2(240, 96, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0tsab"]
+atlas = ExtResource("2_gdt2y")
+region = Rect2(192, 96, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eeaqk"]
+atlas = ExtResource("2_gdt2y")
+region = Rect2(240, 240, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i5tog"]
+atlas = ExtResource("2_gdt2y")
+region = Rect2(0, 48, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rleeb"]
+atlas = ExtResource("2_gdt2y")
+region = Rect2(96, 48, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wu1et"]
+atlas = ExtResource("2_gdt2y")
+region = Rect2(48, 48, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y52ao"]
+atlas = ExtResource("2_gdt2y")
+region = Rect2(288, 240, 48, 48)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4nac7"]
+bg_color = Color(0, 0, 0, 0.46666667)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wquew"]
+atlas = ExtResource("2_gdt2y")
+region = Rect2(0, 192, 160, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pawqx"]
+atlas = ExtResource("2_gdt2y")
+region = Rect2(320, 192, 160, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3vrs6"]
+atlas = ExtResource("2_gdt2y")
+region = Rect2(160, 192, 160, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_co6ef"]
+atlas = ExtResource("2_gdt2y")
+region = Rect2(336, 240, 160, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_krw1k"]
+atlas = ExtResource("2_gdt2y")
+region = Rect2(640, 144, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_abj57"]
+atlas = ExtResource("2_gdt2y")
+region = Rect2(640, 240, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qswe1"]
+atlas = ExtResource("2_gdt2y")
+region = Rect2(336, 240, 160, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l8uv8"]
+atlas = ExtResource("2_gdt2y")
+region = Rect2(640, 192, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bqrud"]
+atlas = ExtResource("2_gdt2y")
+region = Rect2(640, 288, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3xcit"]
+atlas = ExtResource("2_gdt2y")
+region = Rect2(336, 240, 160, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4nac7"]
+atlas = ExtResource("2_gdt2y")
+region = Rect2(688, 144, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2xad8"]
+atlas = ExtResource("2_gdt2y")
+region = Rect2(688, 240, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0jw7r"]
+atlas = ExtResource("2_gdt2y")
+region = Rect2(336, 240, 160, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_teulp"]
+atlas = ExtResource("2_gdt2y")
+region = Rect2(736, 144, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ecrqf"]
+atlas = ExtResource("2_gdt2y")
+region = Rect2(736, 240, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_32kus"]
+atlas = ExtResource("2_gdt2y")
+region = Rect2(336, 240, 160, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_umf6b"]
+atlas = ExtResource("2_gdt2y")
+region = Rect2(592, 144, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tkba0"]
+atlas = ExtResource("2_gdt2y")
+region = Rect2(592, 240, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xgqkk"]
+atlas = ExtResource("2_gdt2y")
+region = Rect2(336, 240, 160, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4p8sv"]
+atlas = ExtResource("2_gdt2y")
+region = Rect2(688, 192, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b6k7y"]
+atlas = ExtResource("2_gdt2y")
+region = Rect2(688, 288, 48, 48)
+
+[node name="UI" type="CanvasLayer"]
+script = ExtResource("1_gdt2y")
+
+[node name="FruitContainer" type="GridContainer" parent="."]
+offset_left = 151.0
+offset_top = 1.0
+offset_right = 211.0
+offset_bottom = 33.0
+theme_override_constants/h_separation = 0
+theme_override_constants/v_separation = 4
+columns = 2
+
+[node name="WoodContainer" type="GridContainer" parent="."]
+offset_left = 222.0
+offset_right = 282.0
+offset_bottom = 32.0
+theme_override_constants/h_separation = 0
+theme_override_constants/v_separation = 4
+columns = 2
+
+[node name="TooltipRes" type="PanelContainer" parent="."]
+z_index = 10
+custom_minimum_size = Vector2(160, 16)
+offset_left = 158.0
+offset_right = 318.0
+offset_bottom = 36.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_vb61p")
+script = ExtResource("3_l8uv8")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="TooltipRes"]
+z_index = 10
+custom_minimum_size = Vector2(150, 16)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+mouse_filter = 2
+theme_override_fonts/normal_font = ExtResource("10_c5elv")
+theme_override_fonts/bold_font = ExtResource("11_cketn")
+theme_override_font_sizes/normal_font_size = 12
+theme_override_font_sizes/bold_font_size = 14
+theme_override_font_sizes/bold_italics_font_size = 12
+theme_override_font_sizes/italics_font_size = 12
+theme_override_font_sizes/mono_font_size = 12
+bbcode_enabled = true
+text = "storage capacity [img]res://assets/art/icons/IconStorage.png[/img] 222"
+fit_content = true
+horizontal_alignment = 1
+script = ExtResource("6_umf6b")
+
+[node name="ResBar" type="PanelContainer" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -304.0
+offset_right = 140.0
+offset_bottom = 32.0
+grow_horizontal = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_wm3ai")
+
+[node name="Ressources" type="GridContainer" parent="ResBar"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+columns = 12
+
+[node name="Wood" type="TextureRect" parent="ResBar/Ressources"]
+layout_mode = 2
+texture = SubResource("AtlasTexture_8dubc")
+
+[node name="WoodCount" type="Label" parent="ResBar/Ressources"]
+custom_minimum_size = Vector2(32, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_yev5y")
+theme_override_font_sizes/font_size = 16
+text = "222"
+horizontal_alignment = 1
+vertical_alignment = 2
+script = ExtResource("4_wm3ai")
+
+[node name="Planks" type="TextureRect" parent="ResBar/Ressources"]
+layout_mode = 2
+texture = SubResource("AtlasTexture_p7vwb")
+
+[node name="PlanksCount" type="Label" parent="ResBar/Ressources"]
+custom_minimum_size = Vector2(32, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_yev5y")
+theme_override_font_sizes/font_size = 16
+text = "222"
+horizontal_alignment = 1
+vertical_alignment = 2
+script = ExtResource("5_vb61p")
+
+[node name="Stone" type="TextureRect" parent="ResBar/Ressources"]
+layout_mode = 2
+texture = SubResource("AtlasTexture_ktti3")
+
+[node name="StoneCount" type="Label" parent="ResBar/Ressources"]
+custom_minimum_size = Vector2(32, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_yev5y")
+theme_override_font_sizes/font_size = 16
+text = "222"
+horizontal_alignment = 1
+vertical_alignment = 2
+script = ExtResource("6_owlbh")
+
+[node name="Food" type="TextureRect" parent="ResBar/Ressources"]
+layout_mode = 2
+texture = SubResource("AtlasTexture_cgfq5")
+
+[node name="FoodCount" type="Label" parent="ResBar/Ressources"]
+custom_minimum_size = Vector2(32, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_yev5y")
+theme_override_font_sizes/font_size = 16
+text = "222"
+horizontal_alignment = 1
+vertical_alignment = 2
+script = ExtResource("7_c5elv")
+
+[node name="Flax" type="TextureRect" parent="ResBar/Ressources"]
+layout_mode = 2
+texture = SubResource("AtlasTexture_7dvkv")
+
+[node name="FlaxCount" type="Label" parent="ResBar/Ressources"]
+custom_minimum_size = Vector2(32, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_yev5y")
+theme_override_font_sizes/font_size = 16
+text = "222"
+horizontal_alignment = 1
+vertical_alignment = 2
+script = ExtResource("8_cketn")
+
+[node name="Sails" type="TextureRect" parent="ResBar/Ressources"]
+layout_mode = 2
+texture = SubResource("AtlasTexture_vdcm2")
+
+[node name="SailsCount" type="Label" parent="ResBar/Ressources"]
+custom_minimum_size = Vector2(32, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_yev5y")
+theme_override_font_sizes/font_size = 16
+text = "222"
+horizontal_alignment = 1
+vertical_alignment = 2
+script = ExtResource("9_64obo")
+
+[node name="TooltipExpSuccess" type="PanelContainer" parent="."]
+z_index = 10
+custom_minimum_size = Vector2(300, 30)
+offset_left = 45.0
+offset_top = 35.0
+offset_right = 445.0
+offset_bottom = 84.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_q0fjp")
+script = ExtResource("10_krw1k")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="TooltipExpSuccess"]
+z_index = 10
+custom_minimum_size = Vector2(300, 40)
+layout_mode = 2
+size_flags_vertical = 4
+mouse_filter = 2
+theme_override_fonts/normal_font = ExtResource("2_yev5y")
+theme_override_fonts/bold_font = ExtResource("11_cketn")
+theme_override_font_sizes/normal_font_size = 16
+theme_override_font_sizes/bold_font_size = 14
+theme_override_font_sizes/bold_italics_font_size = 12
+theme_override_font_sizes/italics_font_size = 12
+theme_override_font_sizes/mono_font_size = 12
+bbcode_enabled = true
+text = "An Expedition returned with a new artefact  [img]res://assets/art/icons/TreasureIcon1.png[/img]"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="TooltipExpNoSuccess" type="PanelContainer" parent="."]
+z_index = 10
+custom_minimum_size = Vector2(300, 30)
+offset_left = 46.0
+offset_top = 83.0
+offset_right = 446.0
+offset_bottom = 132.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_q0fjp")
+script = ExtResource("12_l8uv8")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="TooltipExpNoSuccess"]
+z_index = 10
+custom_minimum_size = Vector2(300, 40)
+layout_mode = 2
+size_flags_vertical = 4
+mouse_filter = 2
+theme_override_fonts/normal_font = ExtResource("2_yev5y")
+theme_override_fonts/bold_font = ExtResource("11_cketn")
+theme_override_font_sizes/normal_font_size = 16
+theme_override_font_sizes/bold_font_size = 14
+theme_override_font_sizes/bold_italics_font_size = 12
+theme_override_font_sizes/italics_font_size = 12
+theme_override_font_sizes/mono_font_size = 12
+text = "An Expedition returned unsuccessful
+"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="BuildMenu" type="PanelContainer" parent="."]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -55.0
+offset_right = 480.0
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxTexture_yev5y")
+
+[node name="Buildings" type="GridContainer" parent="BuildMenu"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+columns = 12
+
+[node name="Woodcutter" type="TextureButton" parent="BuildMenu/Buildings"]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 10
+texture_normal = SubResource("AtlasTexture_vsj0x")
+texture_pressed = SubResource("AtlasTexture_qsv74")
+texture_hover = SubResource("AtlasTexture_h1mc3")
+texture_disabled = SubResource("AtlasTexture_q0fjp")
+
+[node name="TooltipWC" type="PanelContainer" parent="BuildMenu/Buildings/Woodcutter"]
+z_index = 10
+layout_mode = 0
+offset_left = -364.0
+offset_top = 177.0
+offset_right = -191.0
+offset_bottom = 261.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_vb61p")
+script = ExtResource("10_cketn")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="BuildMenu/Buildings/Woodcutter/TooltipWC"]
+z_index = 10
+layout_mode = 2
+mouse_filter = 2
+theme_override_fonts/normal_font = ExtResource("10_c5elv")
+theme_override_fonts/bold_font = ExtResource("11_cketn")
+theme_override_font_sizes/normal_font_size = 12
+theme_override_font_sizes/bold_font_size = 14
+theme_override_font_sizes/bold_italics_font_size = 12
+theme_override_font_sizes/italics_font_size = 12
+theme_override_font_sizes/mono_font_size = 12
+bbcode_enabled = true
+text = "[b] Build Woodcutter [/b]
+[img]res://assets/art/icons/IconStone.png[/img] 5 [img]res://assets/art/icons/IconFruit.png[/img] 10
+
+Collects  [img]res://assets/art/icons/IconWood.png[/img] if placed near trees."
+fit_content = true
+
+[node name="Stonecutter" type="TextureButton" parent="BuildMenu/Buildings"]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 10
+texture_normal = SubResource("AtlasTexture_cof4p")
+texture_pressed = SubResource("AtlasTexture_f7tlh")
+texture_hover = SubResource("AtlasTexture_8k7j3")
+texture_disabled = SubResource("AtlasTexture_yyr6m")
+
+[node name="TooltipSC" type="PanelContainer" parent="BuildMenu/Buildings/Stonecutter"]
+z_index = 10
+layout_mode = 0
+offset_left = -418.0
+offset_top = -223.0
+offset_right = -229.0
+offset_bottom = -139.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_vb61p")
+script = ExtResource("14_4nac7")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="BuildMenu/Buildings/Stonecutter/TooltipSC"]
+z_index = 10
+layout_mode = 2
+mouse_filter = 2
+theme_override_fonts/normal_font = ExtResource("10_c5elv")
+theme_override_fonts/bold_font = ExtResource("11_cketn")
+theme_override_font_sizes/normal_font_size = 12
+theme_override_font_sizes/bold_font_size = 14
+theme_override_font_sizes/bold_italics_font_size = 12
+theme_override_font_sizes/italics_font_size = 12
+theme_override_font_sizes/mono_font_size = 12
+bbcode_enabled = true
+text = "[b] Build Stonecutter [/b]
+[img]res://assets/art/icons/IconWood.png[/img] 10 [img]res://assets/art/icons/IconFruit.png[/img] 10
+
+Collects  [img]res://assets/art/icons/IconStone.png[/img] if placed near stones."
+fit_content = true
+
+[node name="Foodfarm" type="TextureButton" parent="BuildMenu/Buildings"]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 10
+texture_normal = SubResource("AtlasTexture_jkdwc")
+texture_pressed = SubResource("AtlasTexture_rlppe")
+texture_hover = SubResource("AtlasTexture_ycmcx")
+texture_disabled = SubResource("AtlasTexture_tqkrj")
+
+[node name="TooltipFRF" type="PanelContainer" parent="BuildMenu/Buildings/Foodfarm"]
+z_index = 10
+layout_mode = 0
+offset_left = -467.0
+offset_top = -121.0
+offset_right = -264.0
+offset_bottom = -37.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_vb61p")
+script = ExtResource("15_teulp")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="BuildMenu/Buildings/Foodfarm/TooltipFRF"]
+z_index = 10
+layout_mode = 2
+mouse_filter = 2
+theme_override_fonts/normal_font = ExtResource("10_c5elv")
+theme_override_fonts/bold_font = ExtResource("11_cketn")
+theme_override_font_sizes/normal_font_size = 12
+theme_override_font_sizes/bold_font_size = 14
+theme_override_font_sizes/bold_italics_font_size = 12
+theme_override_font_sizes/italics_font_size = 12
+theme_override_font_sizes/mono_font_size = 12
+bbcode_enabled = true
+text = "[b] Build Fruit Collector’s Hut [/b]
+[img]res://assets/art/icons/IconWood.png[/img] 20 [img]res://assets/art/icons/IconStone.png[/img] 10
+
+Collects  [img]res://assets/art/icons/IconFruit.png[/img] if placed near fruit trees."
+fit_content = true
+
+[node name="Sawmill" type="TextureButton" parent="BuildMenu/Buildings"]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 10
+texture_normal = SubResource("AtlasTexture_yev5y")
+texture_pressed = SubResource("AtlasTexture_gdt2y")
+texture_hover = SubResource("AtlasTexture_6rmj2")
+texture_disabled = SubResource("AtlasTexture_uisvg")
+
+[node name="TooltipSM" type="PanelContainer" parent="BuildMenu/Buildings/Sawmill"]
+z_index = 10
+layout_mode = 0
+offset_left = -521.0
+offset_top = 79.0
+offset_right = -393.0
+offset_bottom = 163.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_vb61p")
+script = ExtResource("13_64obo")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="BuildMenu/Buildings/Sawmill/TooltipSM"]
+z_index = 10
+layout_mode = 2
+mouse_filter = 2
+theme_override_fonts/normal_font = ExtResource("10_c5elv")
+theme_override_fonts/bold_font = ExtResource("11_cketn")
+theme_override_font_sizes/normal_font_size = 12
+theme_override_font_sizes/bold_font_size = 14
+theme_override_font_sizes/bold_italics_font_size = 12
+theme_override_font_sizes/italics_font_size = 12
+theme_override_font_sizes/mono_font_size = 12
+bbcode_enabled = true
+text = "[b] Build Sawmill [/b]
+ [img]res://assets/art/icons/IconWood.png[/img] 15 [img]res://assets/art/icons/IconStone.png[/img] 15 [img]res://assets/art/icons/IconFruit.png[/img] 20
+
+Turns  [img]res://assets/art/icons/IconWood.png[/img] into  [img]res://assets/art/icons/IconPlanks.png[/img]."
+fit_content = true
+
+[node name="Flaxfarm" type="TextureButton" parent="BuildMenu/Buildings"]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 10
+texture_normal = SubResource("AtlasTexture_kupmu")
+texture_pressed = SubResource("AtlasTexture_catpy")
+texture_hover = SubResource("AtlasTexture_41akx")
+texture_disabled = SubResource("AtlasTexture_331jc")
+
+[node name="TooltipFF" type="PanelContainer" parent="BuildMenu/Buildings/Flaxfarm"]
+z_index = 10
+layout_mode = 0
+offset_left = -571.0
+offset_top = -327.0
+offset_right = -445.0
+offset_bottom = -243.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_vb61p")
+script = ExtResource("16_krw1k")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="BuildMenu/Buildings/Flaxfarm/TooltipFF"]
+z_index = 10
+layout_mode = 2
+mouse_filter = 2
+theme_override_fonts/normal_font = ExtResource("10_c5elv")
+theme_override_fonts/bold_font = ExtResource("11_cketn")
+theme_override_font_sizes/normal_font_size = 12
+theme_override_font_sizes/bold_font_size = 14
+theme_override_font_sizes/bold_italics_font_size = 12
+theme_override_font_sizes/italics_font_size = 12
+theme_override_font_sizes/mono_font_size = 12
+bbcode_enabled = true
+text = "[b] Build Flaxfarm [/b]
+[img]res://assets/art/icons/IconPlanks.png[/img] 15 [img]res://assets/art/icons/IconStone.png[/img] 20 [img]res://assets/art/icons/IconFruit.png[/img] 30
+
+Plants and collects [img]res://assets/art/icons/IconFlax.png[/img]."
+fit_content = true
+
+[node name="Sailmaker" type="TextureButton" parent="BuildMenu/Buildings"]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 10
+texture_normal = SubResource("AtlasTexture_sesyt")
+texture_pressed = SubResource("AtlasTexture_gglip")
+texture_hover = SubResource("AtlasTexture_0tsab")
+texture_disabled = SubResource("AtlasTexture_eeaqk")
+
+[node name="TooltipSMA" type="PanelContainer" parent="BuildMenu/Buildings/Sailmaker"]
+z_index = 10
+layout_mode = 0
+offset_left = -620.0
+offset_top = 274.0
+offset_right = -484.0
+offset_bottom = 358.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_vb61p")
+script = ExtResource("17_l8uv8")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="BuildMenu/Buildings/Sailmaker/TooltipSMA"]
+z_index = 10
+layout_mode = 2
+mouse_filter = 2
+theme_override_fonts/normal_font = ExtResource("10_c5elv")
+theme_override_fonts/bold_font = ExtResource("11_cketn")
+theme_override_font_sizes/normal_font_size = 12
+theme_override_font_sizes/bold_font_size = 14
+theme_override_font_sizes/bold_italics_font_size = 12
+theme_override_font_sizes/italics_font_size = 12
+theme_override_font_sizes/mono_font_size = 12
+bbcode_enabled = true
+text = "[b] Build Sailmaker [/b]
+[img]res://assets/art/icons/IconPlanks.png[/img] 30 [img]res://assets/art/icons/IconStone.png[/img] 40 [img]res://assets/art/icons/IconFruit.png[/img] 40
+
+Turns [img]res://assets/art/icons/IconFlax.png[/img] into[img]res://assets/art/icons/IconSails.png[/img]."
+fit_content = true
+
+[node name="Storage" type="TextureButton" parent="BuildMenu/Buildings"]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 10
+texture_normal = SubResource("AtlasTexture_i5tog")
+texture_pressed = SubResource("AtlasTexture_rleeb")
+texture_hover = SubResource("AtlasTexture_wu1et")
+texture_disabled = SubResource("AtlasTexture_y52ao")
+
+[node name="TooltipSH" type="PanelContainer" parent="BuildMenu/Buildings/Storage"]
+z_index = 10
+layout_mode = 0
+offset_left = -678.0
+offset_top = -23.0
+offset_right = -504.0
+offset_bottom = 61.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_vb61p")
+script = ExtResource("14_7a1qy")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="BuildMenu/Buildings/Storage/TooltipSH"]
+z_index = 10
+layout_mode = 2
+mouse_filter = 2
+theme_override_fonts/normal_font = ExtResource("10_c5elv")
+theme_override_fonts/bold_font = ExtResource("11_cketn")
+theme_override_font_sizes/normal_font_size = 12
+theme_override_font_sizes/bold_font_size = 14
+theme_override_font_sizes/bold_italics_font_size = 12
+theme_override_font_sizes/italics_font_size = 12
+theme_override_font_sizes/mono_font_size = 12
+bbcode_enabled = true
+text = "[b] Build Storehouse [/b]
+[img]res://assets/art/icons/IconWood.png[/img] 10 [img]res://assets/art/icons/IconPlanks.png[/img] 10 [img]res://assets/art/icons/IconStone.png[/img] 20
+
+Adds 20 storage capacity [img]res://assets/art/icons/IconStorage.png[/img]."
+fit_content = true
+
+[node name="ProjectMenu" type="PanelContainer" parent="."]
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -160.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_4nac7")
+
+[node name="Projects" type="GridContainer" parent="ProjectMenu"]
+layout_mode = 2
+size_flags_vertical = 0
+
+[node name="Museum" type="TextureButton" parent="ProjectMenu/Projects"]
+layout_mode = 2
+size_flags_horizontal = 10
+size_flags_vertical = 2
+texture_normal = SubResource("AtlasTexture_wquew")
+texture_pressed = SubResource("AtlasTexture_pawqx")
+texture_hover = SubResource("AtlasTexture_3vrs6")
+texture_disabled = SubResource("AtlasTexture_co6ef")
+
+[node name="Icon" type="TextureRect" parent="ProjectMenu/Projects/Museum"]
+layout_mode = 0
+offset_right = 48.0
+offset_bottom = 48.0
+texture = SubResource("AtlasTexture_krw1k")
+
+[node name="IconDisabled" type="TextureRect" parent="ProjectMenu/Projects/Museum"]
+layout_mode = 0
+offset_right = 48.0
+offset_bottom = 48.0
+texture = SubResource("AtlasTexture_abj57")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="ProjectMenu/Projects/Museum"]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -112.0
+offset_top = 6.0
+offset_bottom = -1.0
+grow_horizontal = 0
+grow_vertical = 2
+size_flags_horizontal = 0
+mouse_filter = 2
+theme_override_fonts/normal_font = ExtResource("10_c5elv")
+theme_override_fonts/bold_font = ExtResource("11_cketn")
+theme_override_font_sizes/normal_font_size = 10
+theme_override_font_sizes/bold_font_size = 12
+bbcode_enabled = true
+text = "[b] Build Museum [/b]
+ [img]res://assets/art/icons/IconPlanks.png[/img] 40 [img]res://assets/art/icons/IconStone.png[/img] 40 [img]res://assets/art/icons/IconFruit.png[/img] 20"
+
+[node name="Pedestals" type="TextureButton" parent="ProjectMenu/Projects"]
+layout_mode = 2
+size_flags_horizontal = 10
+size_flags_vertical = 2
+texture_normal = SubResource("AtlasTexture_wquew")
+texture_pressed = SubResource("AtlasTexture_pawqx")
+texture_hover = SubResource("AtlasTexture_3vrs6")
+texture_disabled = SubResource("AtlasTexture_qswe1")
+
+[node name="Icon" type="TextureRect" parent="ProjectMenu/Projects/Pedestals"]
+layout_mode = 0
+offset_right = 48.0
+offset_bottom = 48.0
+texture = SubResource("AtlasTexture_l8uv8")
+
+[node name="IconDisabled" type="TextureRect" parent="ProjectMenu/Projects/Pedestals"]
+layout_mode = 0
+offset_right = 48.0
+offset_bottom = 48.0
+texture = SubResource("AtlasTexture_bqrud")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="ProjectMenu/Projects/Pedestals"]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -112.0
+offset_top = 6.0
+offset_bottom = -1.0
+grow_horizontal = 0
+grow_vertical = 2
+size_flags_horizontal = 0
+mouse_filter = 2
+theme_override_fonts/normal_font = ExtResource("10_c5elv")
+theme_override_fonts/bold_font = ExtResource("11_cketn")
+theme_override_font_sizes/normal_font_size = 10
+theme_override_font_sizes/bold_font_size = 12
+bbcode_enabled = true
+text = "[b] Build Pedestals [/b]
+[img]res://assets/art/icons/IconStone.png[/img] 70 [img]res://assets/art/icons/IconFruit.png[/img] 20"
+
+[node name="Harbour" type="TextureButton" parent="ProjectMenu/Projects"]
+layout_mode = 2
+size_flags_horizontal = 10
+size_flags_vertical = 2
+texture_normal = SubResource("AtlasTexture_wquew")
+texture_pressed = SubResource("AtlasTexture_pawqx")
+texture_hover = SubResource("AtlasTexture_3vrs6")
+texture_disabled = SubResource("AtlasTexture_3xcit")
+
+[node name="Icon" type="TextureRect" parent="ProjectMenu/Projects/Harbour"]
+layout_mode = 0
+offset_right = 48.0
+offset_bottom = 48.0
+texture = SubResource("AtlasTexture_4nac7")
+
+[node name="IconDisabled" type="TextureRect" parent="ProjectMenu/Projects/Harbour"]
+layout_mode = 0
+offset_right = 48.0
+offset_bottom = 48.0
+texture = SubResource("AtlasTexture_2xad8")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="ProjectMenu/Projects/Harbour"]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -112.0
+offset_top = 6.0
+offset_bottom = -1.0
+grow_horizontal = 0
+grow_vertical = 2
+size_flags_horizontal = 0
+mouse_filter = 2
+theme_override_fonts/normal_font = ExtResource("10_c5elv")
+theme_override_fonts/bold_font = ExtResource("11_cketn")
+theme_override_font_sizes/normal_font_size = 10
+theme_override_font_sizes/bold_font_size = 12
+bbcode_enabled = true
+text = "[b] Build Harbour Office [/b]
+ [img]res://assets/art/icons/IconPlanks.png[/img] 40 [img]res://assets/art/icons/IconStone.png[/img] 40 [img]res://assets/art/icons/IconSails.png[/img] 5"
+
+[node name="Lighthouse" type="TextureButton" parent="ProjectMenu/Projects"]
+layout_mode = 2
+size_flags_horizontal = 10
+size_flags_vertical = 2
+texture_normal = SubResource("AtlasTexture_wquew")
+texture_pressed = SubResource("AtlasTexture_pawqx")
+texture_hover = SubResource("AtlasTexture_3vrs6")
+texture_disabled = SubResource("AtlasTexture_0jw7r")
+
+[node name="Icon" type="TextureRect" parent="ProjectMenu/Projects/Lighthouse"]
+layout_mode = 0
+offset_right = 48.0
+offset_bottom = 48.0
+texture = SubResource("AtlasTexture_teulp")
+
+[node name="IconDisabled" type="TextureRect" parent="ProjectMenu/Projects/Lighthouse"]
+layout_mode = 0
+offset_right = 48.0
+offset_bottom = 48.0
+texture = SubResource("AtlasTexture_ecrqf")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="ProjectMenu/Projects/Lighthouse"]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -112.0
+offset_top = 6.0
+offset_bottom = -1.0
+grow_horizontal = 0
+grow_vertical = 2
+size_flags_horizontal = 0
+mouse_filter = 2
+theme_override_fonts/normal_font = ExtResource("10_c5elv")
+theme_override_fonts/bold_font = ExtResource("11_cketn")
+theme_override_font_sizes/normal_font_size = 10
+theme_override_font_sizes/bold_font_size = 12
+bbcode_enabled = true
+text = "[b] Build Lighthouse [/b]
+ [img]res://assets/art/icons/IconPlanks.png[/img] 40 [img]res://assets/art/icons/IconStone.png[/img] 80 [img]res://assets/art/icons/IconFruit.png[/img] 20"
+
+[node name="Ship" type="TextureButton" parent="ProjectMenu/Projects"]
+layout_mode = 2
+size_flags_horizontal = 10
+size_flags_vertical = 2
+texture_normal = SubResource("AtlasTexture_wquew")
+texture_pressed = SubResource("AtlasTexture_pawqx")
+texture_hover = SubResource("AtlasTexture_3vrs6")
+texture_disabled = SubResource("AtlasTexture_32kus")
+
+[node name="Icon" type="TextureRect" parent="ProjectMenu/Projects/Ship"]
+layout_mode = 0
+offset_right = 48.0
+offset_bottom = 48.0
+texture = SubResource("AtlasTexture_umf6b")
+
+[node name="IconDisabled" type="TextureRect" parent="ProjectMenu/Projects/Ship"]
+layout_mode = 0
+offset_right = 48.0
+offset_bottom = 48.0
+texture = SubResource("AtlasTexture_tkba0")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="ProjectMenu/Projects/Ship"]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -112.0
+offset_top = 6.0
+offset_bottom = -1.0
+grow_horizontal = 0
+grow_vertical = 2
+size_flags_horizontal = 0
+mouse_filter = 2
+theme_override_fonts/normal_font = ExtResource("10_c5elv")
+theme_override_fonts/bold_font = ExtResource("11_cketn")
+theme_override_font_sizes/normal_font_size = 10
+theme_override_font_sizes/bold_font_size = 12
+bbcode_enabled = true
+text = "[b] Build Ship [/b]
+ [img]res://assets/art/icons/IconPlanks.png[/img] 80 [img]res://assets/art/icons/IconSails.png[/img] 40 [img]res://assets/art/icons/IconFruit.png[/img] 80"
+
+[node name="Expedition" type="TextureButton" parent="ProjectMenu/Projects"]
+layout_mode = 2
+size_flags_horizontal = 10
+size_flags_vertical = 2
+texture_normal = SubResource("AtlasTexture_wquew")
+texture_pressed = SubResource("AtlasTexture_pawqx")
+texture_hover = SubResource("AtlasTexture_3vrs6")
+texture_disabled = SubResource("AtlasTexture_xgqkk")
+
+[node name="Icon" type="TextureRect" parent="ProjectMenu/Projects/Expedition"]
+layout_mode = 0
+offset_right = 48.0
+offset_bottom = 48.0
+texture = SubResource("AtlasTexture_4p8sv")
+
+[node name="IconDisabled" type="TextureRect" parent="ProjectMenu/Projects/Expedition"]
+layout_mode = 0
+offset_right = 48.0
+offset_bottom = 48.0
+texture = SubResource("AtlasTexture_b6k7y")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="ProjectMenu/Projects/Expedition"]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -112.0
+offset_top = 6.0
+offset_bottom = -1.0
+grow_horizontal = 0
+grow_vertical = 2
+size_flags_horizontal = 0
+mouse_filter = 2
+theme_override_fonts/normal_font = ExtResource("10_c5elv")
+theme_override_fonts/bold_font = ExtResource("11_cketn")
+theme_override_font_sizes/normal_font_size = 10
+theme_override_font_sizes/bold_font_size = 12
+bbcode_enabled = true
+text = "[b] Send Expedition [/b]
+ [img]res://assets/art/icons/IconPlanks.png[/img] 50 [img]res://assets/art/icons/IconSails.png[/img] 20 [img]res://assets/art/icons/IconFruit.png[/img] 50"
+
+[connection signal="mouse_entered" from="ResBar" to="TooltipRes" method="toggle" binds= [true]]
+[connection signal="mouse_exited" from="ResBar" to="TooltipRes" method="toggle" binds= [false]]
+[connection signal="mouse_entered" from="BuildMenu/Buildings/Woodcutter" to="BuildMenu/Buildings/Woodcutter/TooltipWC" method="toggle" binds= [true]]
+[connection signal="mouse_exited" from="BuildMenu/Buildings/Woodcutter" to="BuildMenu/Buildings/Woodcutter/TooltipWC" method="toggle" binds= [false]]
+[connection signal="pressed" from="BuildMenu/Buildings/Woodcutter" to="." method="_on_woodcutter_pressed"]
+[connection signal="mouse_entered" from="BuildMenu/Buildings/Stonecutter" to="BuildMenu/Buildings/Stonecutter/TooltipSC" method="toggle" binds= [true]]
+[connection signal="mouse_exited" from="BuildMenu/Buildings/Stonecutter" to="BuildMenu/Buildings/Stonecutter/TooltipSC" method="toggle" binds= [false]]
+[connection signal="pressed" from="BuildMenu/Buildings/Stonecutter" to="." method="_on_stonecutter_pressed"]
+[connection signal="mouse_entered" from="BuildMenu/Buildings/Foodfarm" to="BuildMenu/Buildings/Foodfarm/TooltipFRF" method="toggle" binds= [true]]
+[connection signal="mouse_exited" from="BuildMenu/Buildings/Foodfarm" to="BuildMenu/Buildings/Foodfarm/TooltipFRF" method="toggle" binds= [false]]
+[connection signal="pressed" from="BuildMenu/Buildings/Foodfarm" to="." method="_on_foodfarm_pressed"]
+[connection signal="mouse_entered" from="BuildMenu/Buildings/Sawmill" to="BuildMenu/Buildings/Sawmill/TooltipSM" method="toggle" binds= [true]]
+[connection signal="mouse_exited" from="BuildMenu/Buildings/Sawmill" to="BuildMenu/Buildings/Sawmill/TooltipSM" method="toggle" binds= [false]]
+[connection signal="pressed" from="BuildMenu/Buildings/Sawmill" to="." method="_on_sawmill_pressed"]
+[connection signal="mouse_entered" from="BuildMenu/Buildings/Flaxfarm" to="BuildMenu/Buildings/Flaxfarm/TooltipFF" method="toggle" binds= [true]]
+[connection signal="mouse_exited" from="BuildMenu/Buildings/Flaxfarm" to="BuildMenu/Buildings/Flaxfarm/TooltipFF" method="toggle" binds= [false]]
+[connection signal="pressed" from="BuildMenu/Buildings/Flaxfarm" to="." method="_on_flaxfarm_pressed"]
+[connection signal="mouse_entered" from="BuildMenu/Buildings/Sailmaker" to="BuildMenu/Buildings/Sailmaker/TooltipSMA" method="toggle" binds= [true]]
+[connection signal="mouse_exited" from="BuildMenu/Buildings/Sailmaker" to="BuildMenu/Buildings/Sailmaker/TooltipSMA" method="toggle" binds= [false]]
+[connection signal="pressed" from="BuildMenu/Buildings/Sailmaker" to="." method="_on_sailmaker_pressed"]
+[connection signal="mouse_entered" from="BuildMenu/Buildings/Storage" to="BuildMenu/Buildings/Storage/TooltipSH" method="toggle" binds= [true]]
+[connection signal="mouse_exited" from="BuildMenu/Buildings/Storage" to="BuildMenu/Buildings/Storage/TooltipSH" method="toggle" binds= [false]]
+[connection signal="pressed" from="BuildMenu/Buildings/Storage" to="." method="_on_storage_pressed"]
+[connection signal="pressed" from="ProjectMenu/Projects/Museum" to="." method="_on_museum_pressed"]
+[connection signal="pressed" from="ProjectMenu/Projects/Pedestals" to="." method="_on_pedestals_pressed"]
+[connection signal="pressed" from="ProjectMenu/Projects/Harbour" to="." method="_on_harbour_pressed"]
+[connection signal="pressed" from="ProjectMenu/Projects/Lighthouse" to="." method="_on_lighthouse_pressed"]
+[connection signal="pressed" from="ProjectMenu/Projects/Ship" to="." method="_on_ship_pressed"]
+[connection signal="pressed" from="ProjectMenu/Projects/Expedition" to="." method="_on_expedition_pressed"]

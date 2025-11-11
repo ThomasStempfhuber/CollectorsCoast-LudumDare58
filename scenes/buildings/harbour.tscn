@@ -1,0 +1,52 @@
+[gd_scene load_steps=7 format=3 uid="uid://cemiu0g4u1gol"]
+
+[ext_resource type="Script" uid="uid://c0elsd6ht2m1l" path="res://scenes/buildings/harbour.gd" id="1_e7qvb"]
+[ext_resource type="Texture2D" uid="uid://c07217j216ntx" path="res://assets/art/atlas/Sprites.png" id="2_e0rbu"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8ex8n"]
+atlas = ExtResource("2_e0rbu")
+region = Rect2(672, 272, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j0jxq"]
+atlas = ExtResource("2_e0rbu")
+region = Rect2(576, 272, 96, 96)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ku5cq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8ex8n")
+}],
+"loop": true,
+"name": &"built",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j0jxq")
+}],
+"loop": true,
+"name": &"lot",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w8jy3"]
+size = Vector2(78, 61)
+
+[node name="Harbour" type="StaticBody2D"]
+y_sort_enabled = true
+script = ExtResource("1_e7qvb")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_ku5cq")
+animation = &"lot"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-12, 10.5)
+shape = SubResource("RectangleShape2D_w8jy3")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-12, 10.5)
+shape = SubResource("RectangleShape2D_w8jy3")

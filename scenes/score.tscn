@@ -1,0 +1,314 @@
+[gd_scene load_steps=3 format=3 uid="uid://cp2jenhah7lkl"]
+
+[ext_resource type="Script" uid="uid://clsp1ubrieh6f" path="res://scenes/score.gd" id="1_bak1h"]
+[ext_resource type="FontFile" uid="uid://b475o4l7b5n10" path="res://assets/fonts/Pixellari.ttf" id="2_plgac"]
+
+[node name="Score" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_bak1h")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="GridScreen" type="GridContainer" parent="."]
+custom_minimum_size = Vector2(540, 300)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -270.0
+offset_top = -150.0
+offset_right = 270.0
+offset_bottom = 150.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="score" type="Label" parent="GridScreen"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("2_plgac")
+theme_override_font_sizes/font_size = 32
+text = "Score"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="GridScore" type="GridContainer" parent="GridScreen"]
+custom_minimum_size = Vector2(540, 250)
+layout_mode = 2
+columns = 2
+
+[node name="empty3" type="Label" parent="GridScreen/GridScore"]
+custom_minimum_size = Vector2(135, 16)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_plgac")
+theme_override_font_sizes/font_size = 16
+
+[node name="empty4" type="Label" parent="GridScreen/GridScore"]
+custom_minimum_size = Vector2(135, 16)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_plgac")
+theme_override_font_sizes/font_size = 16
+
+[node name="TimeLabel" type="Label" parent="GridScreen/GridScore"]
+custom_minimum_size = Vector2(135, 16)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_plgac")
+theme_override_font_sizes/font_size = 16
+text = "Time:   22:22"
+
+[node name="empty" type="Label" parent="GridScreen/GridScore"]
+custom_minimum_size = Vector2(135, 16)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_plgac")
+theme_override_font_sizes/font_size = 16
+
+[node name="empty1" type="Label" parent="GridScreen/GridScore"]
+custom_minimum_size = Vector2(135, 16)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_plgac")
+theme_override_font_sizes/font_size = 16
+
+[node name="empty2" type="Label" parent="GridScreen/GridScore"]
+custom_minimum_size = Vector2(135, 16)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_plgac")
+theme_override_font_sizes/font_size = 16
+
+[node name="ResColl" type="Label" parent="GridScreen/GridScore"]
+custom_minimum_size = Vector2(135, 16)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_plgac")
+theme_override_font_sizes/font_size = 16
+text = "Ressources collected"
+
+[node name="Builds" type="Label" parent="GridScreen/GridScore"]
+custom_minimum_size = Vector2(135, 16)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_plgac")
+theme_override_font_sizes/font_size = 16
+text = "Buildings constructed"
+
+[node name="GridResCol" type="GridContainer" parent="GridScreen/GridScore"]
+custom_minimum_size = Vector2(260, 150)
+layout_mode = 2
+columns = 4
+
+[node name="IconWood" type="RichTextLabel" parent="GridScreen/GridScore/GridResCol"]
+custom_minimum_size = Vector2(48, 32)
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_fonts/normal_font = ExtResource("2_plgac")
+bbcode_enabled = true
+text = "[img]res://assets/art/icons/IconWoodBig.png[/img]"
+
+[node name="WoodCount" type="Label" parent="GridScreen/GridScore/GridResCol"]
+custom_minimum_size = Vector2(70, 16)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("2_plgac")
+theme_override_font_sizes/font_size = 16
+text = "2222"
+
+[node name="IconStones" type="RichTextLabel" parent="GridScreen/GridScore/GridResCol"]
+custom_minimum_size = Vector2(48, 32)
+layout_mode = 2
+theme_override_fonts/normal_font = ExtResource("2_plgac")
+bbcode_enabled = true
+text = "[img]res://assets/art/icons/IconStonesBig.png[/img]"
+
+[node name="StoneCount" type="Label" parent="GridScreen/GridScore/GridResCol"]
+custom_minimum_size = Vector2(70, 16)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("2_plgac")
+theme_override_font_sizes/font_size = 16
+text = "2222"
+
+[node name="IconFruit" type="RichTextLabel" parent="GridScreen/GridScore/GridResCol"]
+custom_minimum_size = Vector2(48, 32)
+layout_mode = 2
+theme_override_fonts/normal_font = ExtResource("2_plgac")
+bbcode_enabled = true
+text = "[img]res://assets/art/icons/IconFruitBig.png[/img]"
+
+[node name="FruitCount" type="Label" parent="GridScreen/GridScore/GridResCol"]
+custom_minimum_size = Vector2(70, 16)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("2_plgac")
+theme_override_font_sizes/font_size = 16
+text = "2222"
+
+[node name="IconPlanks" type="RichTextLabel" parent="GridScreen/GridScore/GridResCol"]
+custom_minimum_size = Vector2(48, 32)
+layout_mode = 2
+theme_override_fonts/normal_font = ExtResource("2_plgac")
+bbcode_enabled = true
+text = "[img]res://assets/art/icons/IconPlanksBig.png[/img]"
+
+[node name="PlankCount" type="Label" parent="GridScreen/GridScore/GridResCol"]
+custom_minimum_size = Vector2(70, 16)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("2_plgac")
+theme_override_font_sizes/font_size = 16
+text = "2222"
+
+[node name="IconFlax" type="RichTextLabel" parent="GridScreen/GridScore/GridResCol"]
+custom_minimum_size = Vector2(48, 32)
+layout_mode = 2
+theme_override_fonts/normal_font = ExtResource("2_plgac")
+bbcode_enabled = true
+text = "[img]res://assets/art/icons/IconFlaxBig.png[/img]"
+
+[node name="FlaxCount" type="Label" parent="GridScreen/GridScore/GridResCol"]
+custom_minimum_size = Vector2(70, 16)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("2_plgac")
+theme_override_font_sizes/font_size = 16
+text = "2222"
+
+[node name="IconSails" type="RichTextLabel" parent="GridScreen/GridScore/GridResCol"]
+custom_minimum_size = Vector2(48, 32)
+layout_mode = 2
+theme_override_fonts/normal_font = ExtResource("2_plgac")
+bbcode_enabled = true
+text = "[img]res://assets/art/icons/IconSailsBig.png[/img]"
+
+[node name="SailCount" type="Label" parent="GridScreen/GridScore/GridResCol"]
+custom_minimum_size = Vector2(70, 16)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("2_plgac")
+theme_override_font_sizes/font_size = 16
+text = "2222"
+
+[node name="GridBuilds" type="GridContainer" parent="GridScreen/GridScore"]
+custom_minimum_size = Vector2(260, 150)
+layout_mode = 2
+columns = 4
+
+[node name="IconWoodcutter" type="RichTextLabel" parent="GridScreen/GridScore/GridBuilds"]
+custom_minimum_size = Vector2(48, 32)
+layout_mode = 2
+theme_override_fonts/normal_font = ExtResource("2_plgac")
+bbcode_enabled = true
+text = "[img]res://assets/art/icons/IconWoodcutter.png[/img]"
+
+[node name="Woodcutters" type="Label" parent="GridScreen/GridScore/GridBuilds"]
+custom_minimum_size = Vector2(70, 16)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("2_plgac")
+theme_override_font_sizes/font_size = 16
+text = "22"
+
+[node name="IconStonecutter" type="RichTextLabel" parent="GridScreen/GridScore/GridBuilds"]
+custom_minimum_size = Vector2(48, 32)
+layout_mode = 2
+theme_override_fonts/normal_font = ExtResource("2_plgac")
+bbcode_enabled = true
+text = "[img]res://assets/art/icons/IconStonecutter.png[/img]"
+
+[node name="Stonecutters" type="Label" parent="GridScreen/GridScore/GridBuilds"]
+custom_minimum_size = Vector2(70, 16)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("2_plgac")
+theme_override_font_sizes/font_size = 16
+text = "22"
+
+[node name="IconFruitfarm" type="RichTextLabel" parent="GridScreen/GridScore/GridBuilds"]
+custom_minimum_size = Vector2(48, 32)
+layout_mode = 2
+theme_override_fonts/normal_font = ExtResource("2_plgac")
+bbcode_enabled = true
+text = "[img]res://assets/art/icons/IconFruitfarm.png[/img]"
+
+[node name="Fruitfarms" type="Label" parent="GridScreen/GridScore/GridBuilds"]
+custom_minimum_size = Vector2(70, 16)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("2_plgac")
+theme_override_font_sizes/font_size = 16
+text = "22"
+
+[node name="IconSawmill" type="RichTextLabel" parent="GridScreen/GridScore/GridBuilds"]
+custom_minimum_size = Vector2(48, 32)
+layout_mode = 2
+theme_override_fonts/normal_font = ExtResource("2_plgac")
+bbcode_enabled = true
+text = "[img]res://assets/art/icons/IconSawmill.png[/img]"
+
+[node name="Sawmills" type="Label" parent="GridScreen/GridScore/GridBuilds"]
+custom_minimum_size = Vector2(70, 16)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("2_plgac")
+theme_override_font_sizes/font_size = 16
+text = "22"
+
+[node name="IconFlaxfarm" type="RichTextLabel" parent="GridScreen/GridScore/GridBuilds"]
+custom_minimum_size = Vector2(48, 32)
+layout_mode = 2
+theme_override_fonts/normal_font = ExtResource("2_plgac")
+bbcode_enabled = true
+text = "[img]res://assets/art/icons/IconFlaxfarm.png[/img]"
+
+[node name="Flaxfarms" type="Label" parent="GridScreen/GridScore/GridBuilds"]
+custom_minimum_size = Vector2(70, 16)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("2_plgac")
+theme_override_font_sizes/font_size = 16
+text = "22"
+
+[node name="IconSailmaker" type="RichTextLabel" parent="GridScreen/GridScore/GridBuilds"]
+custom_minimum_size = Vector2(48, 32)
+layout_mode = 2
+theme_override_fonts/normal_font = ExtResource("2_plgac")
+bbcode_enabled = true
+text = "[img]res://assets/art/icons/IconSailmaker.png[/img]"
+
+[node name="Sailmakers" type="Label" parent="GridScreen/GridScore/GridBuilds"]
+custom_minimum_size = Vector2(70, 16)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("2_plgac")
+theme_override_font_sizes/font_size = 16
+text = "22"
+
+[node name="IconStorehouse" type="RichTextLabel" parent="GridScreen/GridScore/GridBuilds"]
+custom_minimum_size = Vector2(48, 32)
+layout_mode = 2
+theme_override_fonts/normal_font = ExtResource("2_plgac")
+bbcode_enabled = true
+text = "[img]res://assets/art/icons/IconStorehouse.png[/img]"
+
+[node name="Storehouses" type="Label" parent="GridScreen/GridScore/GridBuilds"]
+custom_minimum_size = Vector2(70, 16)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("2_plgac")
+theme_override_font_sizes/font_size = 16
+text = "22"
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 12.0
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

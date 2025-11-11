@@ -1,0 +1,105 @@
+[gd_scene load_steps=16 format=3 uid="uid://cm88c0paa1th8"]
+
+[ext_resource type="Script" uid="uid://buih42euias8g" path="res://scenes/buildings/flaxfarm.gd" id="1_cg6lt"]
+[ext_resource type="Texture2D" uid="uid://c07217j216ntx" path="res://assets/art/atlas/Sprites.png" id="2_g0v1d"]
+[ext_resource type="Texture2D" uid="uid://ehbqgvofqqqr" path="res://assets/art/atlas/UI.png" id="3_1yoq0"]
+[ext_resource type="FontFile" uid="uid://b475o4l7b5n10" path="res://assets/fonts/Pixellari.ttf" id="4_ynrdc"]
+[ext_resource type="Script" uid="uid://cbs343k5fqkh" path="res://scenes/buildings/res_label.gd" id="5_dqiue"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cg6lt"]
+atlas = ExtResource("2_g0v1d")
+region = Rect2(0, 288, 144, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g0v1d"]
+atlas = ExtResource("2_g0v1d")
+region = Rect2(144, 288, 144, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1yoq0"]
+atlas = ExtResource("2_g0v1d")
+region = Rect2(288, 288, 144, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ynrdc"]
+atlas = ExtResource("2_g0v1d")
+region = Rect2(432, 288, 144, 80)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dqiue"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cg6lt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g0v1d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1yoq0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ynrdc")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w8jy3"]
+size = Vector2(129, 61)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rubx5"]
+atlas = ExtResource("3_1yoq0")
+region = Rect2(240, 0, 80, 16)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xd1yv"]
+texture = SubResource("AtlasTexture_rubx5")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w8jy3"]
+atlas = ExtResource("3_1yoq0")
+region = Rect2(320, 0, 80, 16)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fb2vg"]
+texture = SubResource("AtlasTexture_w8jy3")
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+region_rect = Rect2(0, 0, 80, 16)
+
+[node name="Flaxfarm" type="StaticBody2D"]
+script = ExtResource("1_cg6lt")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_dqiue")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-7.5, 7.5)
+shape = SubResource("RectangleShape2D_w8jy3")
+
+[node name="ProdBar" type="ProgressBar" parent="."]
+z_index = 2
+offset_left = -40.0
+offset_top = -45.0
+offset_right = 40.0
+offset_bottom = -29.0
+theme_override_styles/background = SubResource("StyleBoxTexture_xd1yv")
+theme_override_styles/fill = SubResource("StyleBoxTexture_fb2vg")
+show_percentage = false
+
+[node name="ResLabel" type="RichTextLabel" parent="."]
+z_index = 2
+offset_left = -25.0
+offset_top = -67.0
+offset_right = 25.0
+offset_bottom = -37.0
+theme_override_fonts/normal_font = ExtResource("4_ynrdc")
+bbcode_enabled = true
+text = "[img]res://assets/art/icons/IconFlax.png[/img] +1"
+horizontal_alignment = 1
+script = ExtResource("5_dqiue")
+
+[node name="Area2D" type="Area2D" parent="."]
+y_sort_enabled = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-7.5, 7.5)
+shape = SubResource("RectangleShape2D_w8jy3")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]

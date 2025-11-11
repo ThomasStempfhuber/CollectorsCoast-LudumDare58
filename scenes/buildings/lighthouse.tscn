@@ -1,0 +1,52 @@
+[gd_scene load_steps=7 format=3 uid="uid://pgs8u8c0phao"]
+
+[ext_resource type="Script" uid="uid://c3vcnur3tek1u" path="res://scenes/buildings/lighthouse.gd" id="1_04gjp"]
+[ext_resource type="Texture2D" uid="uid://c07217j216ntx" path="res://assets/art/atlas/Sprites.png" id="2_c04v0"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_04gjp"]
+atlas = ExtResource("2_c04v0")
+region = Rect2(544, 144, 64, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c04v0"]
+atlas = ExtResource("2_c04v0")
+region = Rect2(480, 144, 64, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3urvi"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_04gjp")
+}],
+"loop": true,
+"name": &"built",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c04v0")
+}],
+"loop": true,
+"name": &"lot",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w8jy3"]
+size = Vector2(46, 43.5)
+
+[node name="Lighthouse" type="StaticBody2D"]
+y_sort_enabled = true
+script = ExtResource("1_04gjp")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_3urvi")
+animation = &"built"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(8, 41.75)
+shape = SubResource("RectangleShape2D_w8jy3")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(8, 41.75)
+shape = SubResource("RectangleShape2D_w8jy3")

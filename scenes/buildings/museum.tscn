@@ -1,0 +1,52 @@
+[gd_scene load_steps=7 format=3 uid="uid://bwf747p25uhwv"]
+
+[ext_resource type="Script" uid="uid://qm8atd2qouu1" path="res://scenes/buildings/museum.gd" id="1_v2nfw"]
+[ext_resource type="Texture2D" uid="uid://c07217j216ntx" path="res://assets/art/atlas/Sprites.png" id="2_58rbs"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v2nfw"]
+atlas = ExtResource("2_58rbs")
+region = Rect2(400, 176, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_58rbs"]
+atlas = ExtResource("2_58rbs")
+region = Rect2(304, 176, 96, 96)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_amrdc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v2nfw")
+}],
+"loop": true,
+"name": &"built",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_58rbs")
+}],
+"loop": true,
+"name": &"lot",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w8jy3"]
+size = Vector2(73, 52)
+
+[node name="Museum" type="StaticBody2D"]
+y_sort_enabled = true
+script = ExtResource("1_v2nfw")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_amrdc")
+animation = &"built"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-7.5, 20)
+shape = SubResource("RectangleShape2D_w8jy3")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-7.5, 20)
+shape = SubResource("RectangleShape2D_w8jy3")

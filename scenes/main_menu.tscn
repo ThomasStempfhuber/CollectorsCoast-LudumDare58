@@ -1,0 +1,149 @@
+[gd_scene load_steps=15 format=3 uid="uid://d1b7tn7p4vg5p"]
+
+[ext_resource type="Script" uid="uid://cq8c1es2girfd" path="res://scripts/main_menu.gd" id="1_bqqt6"]
+[ext_resource type="Texture2D" uid="uid://dwm4dvt53jr4u" path="res://assets/art/backgrounds/Capture.PNG" id="1_ekxnf"]
+[ext_resource type="FontFile" uid="uid://b475o4l7b5n10" path="res://assets/fonts/Pixellari.ttf" id="1_l6cm7"]
+[ext_resource type="Texture2D" uid="uid://ehbqgvofqqqr" path="res://assets/art/atlas/UI.png" id="4_wu84c"]
+[ext_resource type="AudioStream" uid="uid://byq4464uigufm" path="res://assets/sound/DayL.mp3" id="5_oa1go"]
+[ext_resource type="Script" uid="uid://lmkr77v2gvat" path="res://scenes/audio_bg.gd" id="6_oa1go"]
+[ext_resource type="Script" uid="uid://dcv2vaxnw3gtk" path="res://scenes/h_slider.gd" id="7_oa1go"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bqqt6"]
+texture = ExtResource("1_ekxnf")
+modulate_color = Color(0.13149942, 0.13149942, 0.13149942, 1)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8ln24"]
+atlas = ExtResource("4_wu84c")
+region = Rect2(240, 16, 80, 32)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rtw2f"]
+texture = SubResource("AtlasTexture_8ln24")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oa1go"]
+atlas = ExtResource("4_wu84c")
+region = Rect2(400, 16, 80, 32)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_tbmy8"]
+texture = SubResource("AtlasTexture_oa1go")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jk1qb"]
+atlas = ExtResource("4_wu84c")
+region = Rect2(320, 16, 80, 32)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5dd4i"]
+texture = SubResource("AtlasTexture_jk1qb")
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_bqqt6")
+
+[node name="Backgorund" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_bqqt6")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -113.5
+offset_top = -80.0
+offset_right = 113.5
+offset_bottom = 132.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 16
+
+[node name="ButtonStart" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("1_l6cm7")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxTexture_rtw2f")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_tbmy8")
+theme_override_styles/hover = SubResource("StyleBoxTexture_5dd4i")
+text = "Start game"
+
+[node name="ButtonExit" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("1_l6cm7")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxTexture_rtw2f")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_tbmy8")
+theme_override_styles/hover = SubResource("StyleBoxTexture_5dd4i")
+text = "Exit"
+
+[node name="AudioBG" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_oa1go")
+playback_type = 1
+parameters/looping = true
+script = ExtResource("6_oa1go")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -238.0
+offset_top = 19.0
+offset_right = 238.0
+offset_bottom = 83.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("1_l6cm7")
+theme_override_font_sizes/font_size = 64
+text = "Collector's Coast"
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -280.0
+offset_top = -20.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("1_l6cm7")
+theme_override_font_sizes/font_size = 16
+text = "A Ludum Dare 58 entry by Liquid   V1.1 "
+
+[node name="Label3" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 5.0
+offset_top = -23.0
+offset_right = 65.0
+offset_bottom = -3.0
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("1_l6cm7")
+theme_override_font_sizes/font_size = 16
+text = "Volume"
+
+[node name="HSlider" type="HSlider" parent="."]
+custom_minimum_size = Vector2(100, 10)
+layout_mode = 0
+offset_left = 69.0
+offset_top = 336.0
+offset_right = 169.0
+offset_bottom = 352.0
+script = ExtResource("7_oa1go")
+
+[connection signal="pressed" from="VBoxContainer/ButtonStart" to="." method="_on_button_start_pressed"]
+[connection signal="pressed" from="VBoxContainer/ButtonExit" to="." method="_on_button_exit_pressed"]
+[connection signal="drag_ended" from="HSlider" to="HSlider" method="_on_drag_ended"]

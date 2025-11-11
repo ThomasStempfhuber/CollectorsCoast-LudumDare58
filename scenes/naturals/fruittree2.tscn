@@ -1,0 +1,67 @@
+[gd_scene load_steps=9 format=3 uid="uid://8unaafacmjv4"]
+
+[ext_resource type="Script" uid="uid://c0gd5n5rqet5o" path="res://scenes/naturals/fruittree_2.gd" id="1_lr1vm"]
+[ext_resource type="Texture2D" uid="uid://c07217j216ntx" path="res://assets/art/atlas/Sprites.png" id="2_p7old"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lr1vm"]
+atlas = ExtResource("2_p7old")
+region = Rect2(208, 64, 48, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p7old"]
+atlas = ExtResource("2_p7old")
+region = Rect2(256, 64, 48, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3jnct"]
+atlas = ExtResource("2_p7old")
+region = Rect2(304, 64, 48, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mxlki"]
+atlas = ExtResource("2_p7old")
+region = Rect2(352, 64, 48, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2qqce"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lr1vm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p7old")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3jnct")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mxlki")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 2.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1o842"]
+size = Vector2(32, 20)
+
+[node name="Fruittree2" type="StaticBody2D"]
+y_sort_enabled = true
+script = ExtResource("1_lr1vm")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_2qqce")
+animation = &"idle"
+frame_progress = 0.14609233
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 22)
+shape = SubResource("RectangleShape2D_1o842")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 33
+collision_mask = 64
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, 22)
+shape = SubResource("RectangleShape2D_1o842")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]

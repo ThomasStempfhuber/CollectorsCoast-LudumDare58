@@ -1,0 +1,99 @@
+[gd_scene load_steps=15 format=3 uid="uid://cuwe1xehmnh6v"]
+
+[ext_resource type="Script" uid="uid://c8mvl5fmqyp3t" path="res://scenes/buildings/sawmill.gd" id="1_c0mry"]
+[ext_resource type="Texture2D" uid="uid://c07217j216ntx" path="res://assets/art/atlas/Sprites.png" id="2_0nfu5"]
+[ext_resource type="Texture2D" uid="uid://ehbqgvofqqqr" path="res://assets/art/atlas/UI.png" id="3_6tcfb"]
+[ext_resource type="FontFile" uid="uid://b475o4l7b5n10" path="res://assets/fonts/Pixellari.ttf" id="4_yxbg6"]
+[ext_resource type="Script" uid="uid://cbs343k5fqkh" path="res://scenes/buildings/res_label.gd" id="5_lv7p4"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c0mry"]
+atlas = ExtResource("2_0nfu5")
+region = Rect2(0, 384, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0nfu5"]
+atlas = ExtResource("2_0nfu5")
+region = Rect2(96, 384, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6tcfb"]
+atlas = ExtResource("2_0nfu5")
+region = Rect2(192, 384, 96, 96)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_yxbg6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c0mry")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0nfu5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6tcfb")
+}],
+"loop": true,
+"name": &"default",
+"speed": 9.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w8jy3"]
+size = Vector2(83, 39)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rubx5"]
+atlas = ExtResource("3_6tcfb")
+region = Rect2(240, 0, 80, 16)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xd1yv"]
+texture = SubResource("AtlasTexture_rubx5")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w8jy3"]
+atlas = ExtResource("3_6tcfb")
+region = Rect2(320, 0, 80, 16)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fb2vg"]
+texture = SubResource("AtlasTexture_w8jy3")
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+region_rect = Rect2(0, 0, 80, 16)
+
+[node name="Sawmill" type="StaticBody2D"]
+script = ExtResource("1_c0mry")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_yxbg6")
+frame_progress = 0.12796712
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-3.5, 23)
+shape = SubResource("RectangleShape2D_w8jy3")
+
+[node name="ProdBar" type="ProgressBar" parent="."]
+z_index = 2
+offset_left = -40.0
+offset_top = -60.0
+offset_right = 40.0
+offset_bottom = -44.0
+theme_override_styles/background = SubResource("StyleBoxTexture_xd1yv")
+theme_override_styles/fill = SubResource("StyleBoxTexture_fb2vg")
+show_percentage = false
+
+[node name="ResLabel" type="RichTextLabel" parent="."]
+z_index = 2
+offset_left = -25.0
+offset_top = -77.0
+offset_right = 25.0
+offset_bottom = -47.0
+theme_override_fonts/normal_font = ExtResource("4_yxbg6")
+bbcode_enabled = true
+text = "[img]res://assets/art/icons/Iconplanks.png[/img] +1"
+horizontal_alignment = 1
+script = ExtResource("5_lv7p4")
+
+[node name="Area2D" type="Area2D" parent="."]
+y_sort_enabled = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-3.5, 23)
+shape = SubResource("RectangleShape2D_w8jy3")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]

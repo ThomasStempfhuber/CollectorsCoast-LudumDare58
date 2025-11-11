@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://dnb667ovdgogn"]
+
+[ext_resource type="Texture2D" uid="uid://c07217j216ntx" path="res://assets/art/atlas/Sprites.png" id="1_wt6p1"]
+[ext_resource type="Script" uid="uid://llao8ei5imdg" path="res://scenes/naturals/tree_1.gd" id="1_y1oft"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y1oft"]
+atlas = ExtResource("1_wt6p1")
+region = Rect2(16, 96, 48, 64)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1o842"]
+size = Vector2(32, 20)
+
+[node name="Tree1" type="StaticBody2D"]
+y_sort_enabled = true
+script = ExtResource("1_y1oft")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("AtlasTexture_y1oft")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 22)
+shape = SubResource("RectangleShape2D_1o842")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 3
+collision_mask = 8
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, 22)
+shape = SubResource("RectangleShape2D_1o842")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]
