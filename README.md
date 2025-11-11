@@ -10,6 +10,10 @@
 
 ---
 
+https://ldjam.com/events/ludum-dare/58/collectors-coast
+
+---
+
 ## 🏆 Ludum Dare 58 — 8th Overall (Compo)
 
 **Collector’s Coast** achieved **8th place overall** in the **Ludum Dare 58 Compo**!  
